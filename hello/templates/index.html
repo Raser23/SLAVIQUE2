@@ -17,14 +17,38 @@
     }
 
   </script>
+
+  <style type="text/css">
+  input {
+    text-align: center;
+    size:40;
+  }
+  body {
+      background-color: #b3c6ff; /* Цвет фона */
+    }
+
+    .center{
+      margin: auto;
+      display: table;
+
+    }
+    .centerV{
+      position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    }
+
+  </style>
+
 </head>
 <body>
 
-<div style = "margin: auto;display: table;">
-	<h1>ANSWER</h1>
-	<input type="text" name="pipecPolnii" id = 'input' >
-	<br>
-	<button onclick="on_click()" style = "margin: auto;display: table;">Check</button>
+<div  class="center centerV">
+  <h1 class="center">ANSWER</h1>
+  <input type="text" name="pipecPolnii" id = 'input' maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+  <br>
+  <button onclick="on_click()" class="center">Check</button>
 </div>
 </body>
 </html>
